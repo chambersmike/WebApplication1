@@ -8,21 +8,31 @@
 export class MagicEightBall implements OnInit {
 
     private PossibleResponses: Array<RandomResponse> = [];
+    public questionText: string;
     public ominousResponse: string;
-
-    // Unit Test:
-    // 1. User should enter some value before hitting ask
-    // 2. We should display a response if user asks a question
-    // 3. Response should be random
-    // 4. Page should load if navigated to (health check)
+    public errorText: string;
 
     ngOnInit() {
         this.loadResponses();
     }
+
     Ask(e: any) {
+        this.clearError();
+        if (!this.questionText) {
+            return this.setError("Please enter a question.");
+        }
+
         let i: number = this.getRandomInclusive(0, this.PossibleResponses.length - 1);
         let response: RandomResponse = this.getResponse(i);
         this.ominousResponse = response.ResponseText;
+    }
+
+    private setError(text: string) {
+        this.errorText = text;
+    }
+
+    private clearError() {
+        this.errorText = "";
     }
 
     private getResponse(i: number) {

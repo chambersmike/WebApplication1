@@ -1,17 +1,18 @@
 ﻿<div class="magic-eight-ball">
     <div class="top">
         <h1>Magic 8 Ball!!</h1>
+        <label class="error">{{errorText}}</label>
     </div>
     <div class="middle">
         <label>What would you like to know?</label>
-        <input type="text" />
-        <button (click)="Ask()">Ask</button>
+        <input type="text" id="questionText" [(ngModel)]="questionText" />
+        <button id="askButton" (click)="Ask(e)">Ask</button>
     </div>
     <div>
         <label>Who wants to know?</label>
         <input type="text" />
     </div>
     <div class="result-section">
-        <label>{{ominousResponse}}</label>
+        <label id="ominousResponse">{{ominousResponse}}</label>
     </div>
 </div>

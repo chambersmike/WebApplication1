@@ -7,10 +7,14 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
         files: [
             '../../wwwroot/dist/vendor.js',
-            './boot-tests.ts'
+            './boot-tests.ts',
+            '../app/components/magic8ball/magic8ball.component.spec.ts',
+            '../app/components/magic8ball/magic8ball.component.ts'
         ],
         preprocessors: {
-            './boot-tests.ts': ['webpack']
+            './boot-tests.ts': ['webpack'],
+            '../app/components/magic8ball/magic8ball.component.spec.ts': ['webpack'],
+            '../app/components/magic8ball/magic8ball.component.ts': ['webpack']
         },
         reporters: ['progress'],
         port: 9876,

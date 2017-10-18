@@ -21,6 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\magic8ball\magic8ball.component.spec.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\magic8ball\magic8ball.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\magic8ball\magic8ball.component.ts" />
   </ItemGroup>
 
